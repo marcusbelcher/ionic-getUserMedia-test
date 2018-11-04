@@ -8,14 +8,14 @@ import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements AfterViewInit {
-  @ViewChild('videoContainer') videoContainer;
-  private video: HTMLVideoElement;
+  // @ViewChild('videoContainer') videoContainer;
+  // private video: HTMLVideoElement;
 
   constructor(private platform: Platform, private androidPermissions: AndroidPermissions) {
-    this.video = document.createElement('video');
+    /*this.video = document.createElement('video');
     this.video.width = 640;
     this.video.height = 480;
-    this.video.setAttribute('autoplay', '');
+    this.video.setAttribute('autoplay', '');*/
     
     if (this.platform.is('cordova')) {
       this.platform.ready().then(() => {
@@ -30,10 +30,11 @@ export class HomePage implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.videoContainer.nativeElement.appendChild(this.video);
-    this.initWebRTC();
+    // this.videoContainer.nativeElement.appendChild(this.video);
+    // this.initWebRTC();
   }
 
+/*
   initWebRTC() {
     const constraints = {
       video: true,
@@ -52,5 +53,5 @@ export class HomePage implements AfterViewInit {
     };
 
     navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
-  }
+  } */
 }
